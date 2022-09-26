@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <Title>THE TITLE OF THE PAGE</Title>
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+
+</head>
+<body> 
+    <!--  all your code goes here  -->
+<main>
+    <header>
+        <h1>WIZARD SPELL TRACKER</h1>
+    </header>
+
+    <div class="line"></div>
+    <div class="line"></div>
+
+    <section class="flex main-holder">
+    <section class="box">
+        <h2>SPELL BOOK</h2>
+        <div class="line-s"></div>
+        <nav class="level-holder">
+            <button class="lvl-btn first-btn">ALL</button>
+            <button class="lvl-btn">-0-</button>
+            <button class="lvl-btn">1ST</button>
+            <button class="lvl-btn">2ND</button>
+            <button class="lvl-btn">3RD</button>
+            <button class="lvl-btn">4TH</button>
+            <button class="lvl-btn">5TH</button>
+            <button class="lvl-btn">6TH</button>
+            <button class="lvl-btn">7TH</button>
+            <button class="lvl-btn">8TH</button>
+            <button class="lvl-btn">9TH</button>
+            <button class="lvl-btn">CON</button>
+            <button class="lvl-btn last-btn">-R-</button>
+        </nav>
+        <nav class="school-holder">
+            <button class="school-btn">ALL</button>
+            <button class="school-btn">ABJ</button>
+            <button class="school-btn">CONJ</button>
+            <button class="school-btn">DIV</button>
+            <button class="school-btn">ENCH</button>
+            <button class="school-btn">EVO</button>
+            <button class="school-btn">ILLU</button>
+            <button class="school-btn">NECRO</button>
+            <button class="school-btn">TRANS</button>
+        </nav>
+        <div class="line-s"></div>
+        <article id="spell-book-holder">
+
+<!-- DEMO SPELL -->
+            <!-- <h3>CANTRIP</h3>
+            <section class="spell-hold">
+                <div class="spell-min">
+                <div class="spell-icon"></div>
+                <div>
+                    <h4>Fireball</h4>
+                    <p class="grey">Necromancy</p>
+                </div>
+                <p class="w50">Conc</p>
+                <p class="w50">60 ft</p>
+                <p class="w50">8d8+5</p>
+                <p class="w120">STR Save</p>
+                <p class = "plus">+</p>
+                </div>
+            </section>
+
+            <section class="spell-hold">
+                <div class="spell-min">
+                <div class="spell-icon"></div>
+                <div>
+                    <h4>Detect Magic</h4>
+                    <p class="grey">Necromancy</p>
+                </div>
+                <p class="w50">Ritual</p>
+                <p class="w50">60 ft</p>
+                <p class="w50">1d8</p>
+                <p class="w120">WIS Save</p>
+                <p class = "plus">+</p>
+                </div>
+            </section>
+
+            <section class="spell-hold">
+                <div class="spell-min">
+                <div class="spell-icon"></div>
+                <div>
+                    <h4>Mage Armor</h4>
+                    <p class="grey">Necromancy</p>
+                </div>
+                <p class="w50"></p>
+                <p class="w50">60 ft</p>
+                <p class="w50">1d8</p>
+                <p class="w120">WIS Save</p>
+                <p class = "plus">-</p>
+                </div>
+
+                <div class="spell-expand">
+                    <p class="desc">An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.</p>
+                    <p class="desc"> The hand can't attack, activate magic items, or carry more than 10 pounds.</p>
+                </div>
+
+                <div class="flex right">
+                    <button class="remove-btn">Remove from Spellbook</button>
+                </div>
+
+            </section> -->
+
+<!-- END DEMO SPELL -->
+
+        <div class="flex center">
+            <button id="add-custom">Add Custom Spell</button>
+        </div>
+        </article>
+    </section>
+
+    <section class="box">
+        <h2>ALL SPELLS</h2>
+        <div class="line-s"></div>
+        <nav class="level-holder">
+            <button class="lvl-btn first-btn">ALL</button>
+            <button class="lvl-btn">-0-</button>
+            <button class="lvl-btn">1ST</button>
+            <button class="lvl-btn">2ND</button>
+            <button class="lvl-btn">3RD</button>
+            <button class="lvl-btn">4TH</button>
+            <button class="lvl-btn">5TH</button>
+            <button class="lvl-btn">6TH</button>
+            <button class="lvl-btn">7TH</button>
+            <button class="lvl-btn">8TH</button>
+            <button class="lvl-btn">9TH</button>
+            <button class="lvl-btn">CON</button>
+            <button class="lvl-btn last-btn">-R-</button>
+        </nav>
+        <nav class="school-holder">
+            <button class="school-btn">ALL</button>
+            <button class="school-btn">ABJ</button>
+            <button class="school-btn">CONJ</button>
+            <button class="school-btn">DIV</button>
+            <button class="school-btn">ENCH</button>
+            <button class="school-btn">EVO</button>
+            <button class="school-btn">ILLU</button>
+            <button class="school-btn">NECRO</button>
+            <button class="school-btn">TRANS</button>
+        </nav>
+        <div class="line-s"></div>
+        <article id="all-spells-holder">
+
+<!-- DEMO SPELL -->
+<!-- <h3>CANTRIP</h3>
+<section class="spell-hold">
+    <div class="spell-min">
+    <div class="spell-icon"></div>
+    <div>
+        <h4>Fireball</h4>
+        <p class="grey">Necromancy</p>
+    </div>
+    <p class="w50">Conc</p>
+    <p class="w50">60 ft</p>
+    <div class="w50">
+        <p>5d8+6</p>
+        <p>150g</p>
+    </div>
+    <div class="w120">
+        <p>DEX SAVE</p>
+        <p>3 hours</p>
+    </div>
+    <p class = "plus">+</p>
+    </div>
+</section>
+
+<section class="spell-hold">
+    <div class="spell-min">
+    <div class="spell-icon"></div>
+    <div>
+        <h4>Detect Magic</h4>
+        <p class="grey">Necromancy</p>
+    </div>
+    <p class="w50">Ritual</p>
+    <p class="w50">60 ft</p>
+    <div class="w50">
+        <p> - </p>
+        <p>100g</p>
+    </div>
+    <div class="w120">
+        <p> - </p>
+        <p>3 hours</p>
+    </div>
+    <p class = "plus">+</p>
+    </div>
+</section>
+
+<section class="spell-hold">
+    <div class="spell-min">
+    <div class="spell-icon"></div>
+    <div>
+        <h4>Mage Armor</h4>
+        <p class="grey">Necromancy</p>
+    </div>
+    <p class="w50"></p>
+    <p class="w50">60 ft</p>
+    <div class="w50">
+        <p>2d8</p>
+        <p>100g</p>
+    </div>
+    <div class="w120">
+        <p>WIS Save</p>
+        <p>3 hours</p>
+    </div>
+    <p class = "plus">-</p>
+    </div>
+
+    <div class="spell-expand">
+        <p class="desc">An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.</p>
+        <p class="desc">The hand can't attack, activate magic items, or carry more than 10 pounds.</p>
+    </div>
+
+    <div class="flex right">
+        <button class="remove-btn">Add to Spellbook</button>
+    </div>
+</section> -->
+
+<!-- END DEMO SPELL -->
+
+        </article>
+    </section>
+
+</main>
+
+<script src="./node_modules/axios/dist/axios.min.js"> </script>
+<script src="index.js"></script>
+</body>
+</html> 
