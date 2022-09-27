@@ -106,7 +106,7 @@ button:hover {
     margin-right: 0px;
 }
 
-.selected-btn{
+.selected-all-btn,.selected-book-btn{
     background-color: #7D2063;
     color: white;
 }

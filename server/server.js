@@ -20,10 +20,18 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 });
 
 const { getWizardSpells } = require("./controller.js");
+const { home, styles, reset, js } = require("./loader.js");
 
-//GET ALL SPELLS
+//CONNECT HTML
+// app.get("/", home);
+// app.get("/styles", styles);
+// app.get("/reset", reset);
+// app.get("/js", js);
+
+//GET SPELLS including Queries
 app.get("/api/spells", getWizardSpells);
-//app.get("/api/spells", getWizardByLevel);
+
+const port = process.env.PORT || SERVER_PORT;
 
 app.listen(SERVER_PORT, () =>
   console.log(`server running on port ${SERVER_PORT}`)

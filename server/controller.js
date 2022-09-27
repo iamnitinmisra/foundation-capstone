@@ -10,12 +10,13 @@ module.exports = {
     console.log(req.query);
     const { level, school } = req.query;
     spells = [];
+    let timeout = 5000;
 
     path = `http://www.dnd5eapi.co/api/spells/`;
 
     //handle queries
     if (level != undefined || school != undefined) {
-      path += `?`;
+      path += ``;
 
       //add level queries
       if (level != undefined) {
@@ -34,6 +35,8 @@ module.exports = {
           path += `&school=${school}`;
         }
       }
+
+      path = path.replace("&", "?");
     }
 
     console.log(path);
@@ -50,7 +53,7 @@ module.exports = {
           });
 
           if (index != -1) {
-            spells[i] = res.data;
+            spells.push(res.data);
           }
         });
       }
@@ -59,6 +62,6 @@ module.exports = {
     setTimeout(() => {
       console.log(spells.length);
       res.status(200).send(spells);
-    }, 2000);
+    }, timeout);
   },
 };
