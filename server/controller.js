@@ -5,11 +5,15 @@ const { CONNECTION_STRING } = process.env;
 const { default: axios } = require("axios");
 
 module.exports = {
-  //get ALL wizard spells
+  //GET ALL WIZARD SPELLS
   getWizardSpells: (req, res) => {
     //object to pass back all the spell information
     spells = [];
-    console.log("got into wizard spells");
+    console.log("all wizard spells");
+    console.log(req.query);
+    const { level, school } = req.query;
+    console.log(level);
+    console.log(school);
 
     axios
       .get("https://www.dnd5eapi.co/api/classes/wizard/spells")
@@ -23,6 +27,7 @@ module.exports = {
         }
       });
 
+    //time out so that axios can return before sending spells
     setTimeout(() => {
       console.log(spells.length);
       res.status(200).send(spells);
@@ -31,10 +36,39 @@ module.exports = {
 
   //get spells by level
   getWizardByLevel: (req, res) => {
-    const { level } = req.params;
+    console.log("wizard by level");
+    console.log(req.query);
+    const { level, school } = req.query;
     spells = [];
 
-    let path = `http://www.dnd5eapi.co/api/spells/?level=${level}`;
+    path = `http://www.dnd5eapi.co/api/spells/`;
+
+    console.log(level);
+
+    //handle queries
+    if (level != undefined || school != undefined) {
+      path += `?`;
+
+      //add level queries
+      if (level != undefined) {
+        for (let i = 0; i < level.length; i++) {
+          path += `&level=${level[i]}`;
+        }
+      }
+
+      //add school queries
+      if (school != undefined) {
+        if (typeof school == "object") {
+          for (let i = 0; i < school.length; i++) {
+            path += `&school=${school[i]}`;
+          }
+        } else {
+          path += `&school=${school}`;
+        }
+      }
+    }
+
+    console.log(path);
 
     axios.get(path).then((res) => {
       //cycle over each spell individually
