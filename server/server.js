@@ -19,11 +19,11 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   },
 });
 
-const { getWizardSpells, getWizardByLevel } = require("./controller.js");
+const { getWizardSpells } = require("./controller.js");
 
 //GET ALL SPELLS
-//app.get("/api/spells", getWizardSpells);
-app.get("/api/spells", getWizardByLevel);
+app.get("/api/spells", getWizardSpells);
+//app.get("/api/spells", getWizardByLevel);
 
 app.listen(SERVER_PORT, () =>
   console.log(`server running on port ${SERVER_PORT}`)
