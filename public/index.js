@@ -12,7 +12,7 @@ function all(e) {
   //console.log(e);
 
   //toggle clicked button
-  e.originalTarget.classList.toggle("selected-all-btn");
+  e.target.classList.toggle("selected-all-btn");
 
   //collect all selected buttons from same category
   const selected = document.querySelectorAll(".selected-all-btn");
