@@ -23,18 +23,18 @@ function all(e) {
     selectText[i] = selected[i].innerText;
   }
 
-  //find path from selected buttons
-  const path = findPath(selectText);
-  console.log(path);
+  //find query from selected buttons
+  const query = findPath(selectText);
+  console.log(query);
 
-  //   axios
-  //     .get(`api/spells/${path}`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+  axios
+    .post(`/api/spells/`, { query })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 // give string array of button text and returns the query path

@@ -1,8 +1,4 @@
-require("dotenv").config();
-
-const { CONNECTION_STRING } = process.env;
-
-const { default: axios } = require("axios");
+const path = require("path");
 
 module.exports = {
   home: (req, res) => {
@@ -10,7 +6,7 @@ module.exports = {
   },
 
   styles: (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.css"));
+    res.sendFile(path.join(__dirname, "../public/styles.css"));
   },
 
   reset: (req, res) => {
