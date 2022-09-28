@@ -9,20 +9,40 @@ for (let i = 0; i < allBtns.length; i++) {
 
 //ALL SPELLS btns minus the "all" btns
 function all(e) {
-  console.log(e);
-  //text = e.originalTarget.innerText;
+  //console.log(e);
+
+  //toggle clicked button
   e.originalTarget.classList.toggle("selected-all-btn");
+
+  //collect all selected buttons from same category
   const selected = document.querySelectorAll(".selected-all-btn");
   const selectText = [];
-  let path = ``;
 
+  //turn selected buttons into a string array
   for (let i = 0; i < selected.length; i++) {
     selectText[i] = selected[i].innerText;
   }
-  console.log(selectText);
 
-  for (let i = 0; i < selectText.length; i++) {
-    switch (selectText[i]) {
+  //find path from selected buttons
+  const path = findPath(selectText);
+  console.log(path);
+
+  //   axios
+  //     .get(`api/spells/${path}`)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+}
+
+// give string array of button text and returns the query path
+function findPath(selected) {
+  let path = "";
+
+  for (let i = 0; i < selected.length; i++) {
+    switch (selected[i]) {
       case "-0-":
         path += "&level=0";
         break;
@@ -82,16 +102,5 @@ function all(e) {
 
   path = path.replace("&", "?");
 
-  console.log(path);
-
-  //   axios
-  //     .get(`api/spells/${path}`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+  return path;
 }
-
-function findPath(selected) {}
